@@ -1,11 +1,13 @@
-package mukill.maven.index;
+package hello.world;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IndexApplication {
+public class WorldApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(IndexApplication.class, args);
+		SpringApplication.run(WorldApplication.class, args);
 	}
+
 }

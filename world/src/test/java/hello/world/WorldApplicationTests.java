@@ -1,10 +1,10 @@
-package mukill.maven.index;
+package hello.world;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class IndexApplicationTests {
+class WorldApplicationTests {
 
 	@Test
 	void contextLoads() {
