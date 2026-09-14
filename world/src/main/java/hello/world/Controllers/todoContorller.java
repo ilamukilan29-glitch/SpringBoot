@@ -1,4 +1,4 @@
-package hello.world;
+package hello.world.Controllers;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 //Reduce the Repetaition of similar pervious endpoint
 @RequestMapping("/todo")
 public class todoContorller {
-
-   
-
+    // 
     @GetMapping("/run")
     String getTodo(){
         return "Todo Is Running";
@@ -56,7 +54,4 @@ public class todoContorller {
     String dodelete(@PathVariable int id){
         return "Todo Deleted "+id;
     }
-
-
-
 }

@@ -1,4 +1,4 @@
-package hello.world;
+package hello.world.Repositories;
 
 import org.springframework.stereotype.Component;
 
@@ -19,7 +19,7 @@ public class TodoRepository {
             EX: RepositoryFiles
     */
 
-    String getAllTodos(){
+    public String getAllTodos(){
         return "todos";
     }
 }
