@@ -3,6 +3,7 @@ package CRUD.Exp.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.service.annotation.PutExchange;
 
@@ -47,6 +49,10 @@ public class todoController {
         }catch(RuntimeException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
+    }
+    @GetMapping("/getbypage")
+    ResponseEntity<Page<todo>> gettodoPage(@RequestParam int size, @RequestParam int page){
+        return new ResponseEntity<>(todoservice.getTodosByPage(page, size),HttpStatus.OK);
     }
     @PutMapping("/update")
     ResponseEntity<todo> Updatetodo(@RequestBody todo value){

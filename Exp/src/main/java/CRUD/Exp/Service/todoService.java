@@ -1,8 +1,11 @@
 package CRUD.Exp.Service;
 import java.util.List;
 
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import CRUD.Exp.Models.todo;
@@ -28,8 +31,11 @@ public class todoService {
     public todo UpdateTodo(todo data){
         return todorepo.save(data);
     }
+    public Page<todo> getTodosByPage(int page,int size){
+        Pageable pageable = PageRequest.of(page, size);
+        return todorepo.findAll(pageable);
+    }
     public void deleteTodo(Long id){
-        
         todorepo.delete(getTodo(id));
     }
 }
